@@ -19,23 +19,46 @@
             let player = playerSelection.toLowerCase();
 
             if (player === computerSelection){
-                console.log("It's a draw");
+                return "It's a draw";
             }else if ((player === "rock") && (computerSelection === "scissors")) {
-                console.log("You win! Rock beats Scissors");
+                return "You win! rock beats scissors";
             }else if ((player === "scissors") && (computerSelection === "paper")) {
-                console.log("You win! Scissors beats Paper")
+                return "You win! scissors beats paper";
             }else if ((player === "paper") && (computerSelection === "rock")) {
-                console.log("You win! Paper beats Scissors")
+                return "You win! paper beats scissors";
             } else {
-                console.log( "You lose! " + computerSelection + " beats " + player)
+                return "You lose! " + computerSelection + " beats " + player;
             }
         }
+        function game (){
 
-        for (let i = 0; i <10; i++){
-            playRound("rock", getComputerChoice());
+            // function allows 5 games to be played and declares an overall winnner
+
+            let w = 0;
+            let l = 0;
+
+            for (let i = 0; i <5; i++){
+                let result = playRound(prompt("Your move....."), getComputerChoice());
+                console.log(result);
+                if (result.includes("win")) {
+                    w++;
+                }else if (result.includes("lose")){
+                    l++;
+                }
+            }
+
+            if (w > l){
+                console.log("You won the game!");
+            }else if (w < l){
+                console.log("You lost the game");
+            }else {
+                console.log("No one wins");
+            }
+
+
         }
 
-
+        game();
 
 
 
