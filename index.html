@@ -8,15 +8,32 @@
     <script>
 
         function getComputerChoice(){
-            // returns rock, paper or scissors randomly when called //
+            // returns rock, paper or scissors randomly when called 
             let options = ["rock", "paper", "scissors"] ;
             return options[Math.floor( Math.random() * options.length )]       
         }
 
-        for (let i = 0; i < 10; i++){
-            console.log(getComputerChoice());
+        function playRound (playerSelection, computerSelection) {
+            // allows a round of the game to be played
+            // make player input case insensitive
+            let player = playerSelection.toLowerCase();
+
+            if (player === computerSelection){
+                console.log("It's a draw");
+            }else if ((player === "rock") && (computerSelection === "scissors")) {
+                console.log("You win! Rock beats Scissors");
+            }else if ((player === "scissors") && (computerSelection === "paper")) {
+                console.log("You win! Scissors beats Paper")
+            }else if ((player === "paper") && (computerSelection === "rock")) {
+                console.log("You win! Paper beats Scissors")
+            } else {
+                console.log( "You lose! " + computerSelection + " beats " + player)
+            }
         }
 
+        for (let i = 0; i <10; i++){
+            playRound("rock", getComputerChoice());
+        }
 
 
 
