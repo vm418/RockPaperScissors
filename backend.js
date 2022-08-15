@@ -42,11 +42,19 @@ function playRound (player, computerSelection) {
     loss.textContent = l;
     // once player or computer reaches 5 deactivates buttons
     if(w==5 || l==5){
-        content.textContent="Game Over";
+        if(w==5){
+        content.textContent="You win .... refresh to play again";
         buttons.forEach(button => {
             button.disabled = true
 
         });
+        }else{
+            content.textContent="You lose .... refresh to play again";
+            buttons.forEach(button => {
+                button.disabled = true
+
+            });
+        }
     }
 }
 
