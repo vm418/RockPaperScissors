@@ -5,29 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RockPaperScissors</title>
-   <!-- <script src="backend.js"></script>-->
     <link rel="stylesheet" href="style.css" >
 </head>
 <body>
-    <div class="top">
+    <div class="header">
         <div class="score">
             Wins:
-            <div class="scoreBoard">3</div>
+            <div id="win">0</div>
         </div>
         <div class="score">
             Losses:
-            <div class="scoreBoard">3</div>
+            <div id="loss">0</div>
         </div>
-    </div>
+        </div>
+        <div class="content">Make your move....</div>
+        <div class="footer">
+            <button class="button" id="rock"><img src="rock.png" width="30px" height="30px"></button>
+            <button class="button" id="paper"><img src="paper.png" width="30px" height="30px"></button>
+            <button class="button" id="scissors"><img src="scissors.png" width="30px" height="30px"></button>
+        </div>
 
-    <div class="mid">
-        <div class="display">some text</div>
-    </div>
-
-    <div class="bottom">
-        <button class="button">Rock</button>
-        <button class="button">Paper</button>
-        <button class="button">Scissors</button>
-    </div>
+        <script src="backend.js"></script>
 </body>
 </html>
